@@ -2,6 +2,8 @@
 
 A Docker-based backup solution for [Vaultwarden](https://github.com/dani-garcia/vaultwarden) with encryption and Telegram integration.
 
+<img src="./.github/assets/IMG_3776.jpg" alt="Telegram notification" align="right" width="380px">
+
 > Support only **sqlite3** database backend
 
 ## ✨ Key Features
