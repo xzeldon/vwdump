@@ -36,7 +36,7 @@ A Docker-based backup solution for [Vaultwarden](https://github.com/dani-garcia/
 ```yaml
 services:
   vaultwarden-backup:
-    build: .
+    image: ghcr.io/xzeldon/vwdump:latest
     container_name: vaultwarden-backup
     restart: unless-stopped
     environment:
@@ -48,7 +48,7 @@ services:
 
       # Encryption (HIGHLY RECOMMENDED)
       - BACKUP_ENCRYPTION_KEY=your_very_secure_password_here
-      # - PBKDF2_ITERATIONS=350000 # Optional: Lower for very slow CPUs (e.g., old Raspberry Pi), Bitwarden recommended 600,000 or more
+      # - PBKDF2_ITERATIONS=350000 # Optional: Lower for very slow CPUs (e.g., old Raspberry Pi), OWASP recommended 600,000 or more
 
       # Telegram Integration
       - TG_TOKEN=1234567890:ABCdefGHIjklMNOpqrsTUVwxyz
@@ -94,7 +94,7 @@ docker run --rm \
   -e TG_TOKEN="your_telegram_token" \
   -e TG_CHAT_ID="your_telegram_chat_id" \
   -e VWDUMP_DEBUG=true \
-  your-image-name manual
+  ghcr.io/xzeldon/vwdump:latest manual
 ```
 
 ## 📦 File Formats & Restoration
